@@ -3,7 +3,7 @@
 # Task Manager
 
 **Full-Stack Web Application — FastAPI + JWT + SQLite**
-Author: Dharania
+
 
 ---
 
@@ -188,6 +188,3 @@ Install with:
 pip install -r requirements.txt
 ```
 
-## Author
-
-**Dharania**
