@@ -188,19 +188,6 @@ Install with:
 pip install -r requirements.txt
 ```
 
----
-
-## Future Improvements
-
-- Dark Mode
-- Task Categories
-- Due Dates
-- Drag and Drop Tasks
-- Task Search
-- Cloud Deployment
-
----
-
 ## Author
 
 **Dharania**
