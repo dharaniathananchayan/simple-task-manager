@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>Task Manager</title>
+
+    <link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+
+    <div class="container">
+
+        <h1>Task Manager</h1>
+
+        <!-- REGISTER -->
+        <div class="box" id="registerBox">
+
+            <h2>Create Account</h2>
+
+            <input
+                type="email"
+                id="registerEmail"
+                placeholder="Enter email"
+            >
+
+            <input
+                type="password"
+                id="registerPassword"
+                placeholder="Enter password"
+            >
+
+            <button onclick="registerUser()">
+                Register
+            </button>
+
+            <p>
+                Already have an account?
+
+                <a href="#" onclick="showLogin()">
+                    Login
+                </a>
+            </p>
+
+        </div>
+
+        <!-- LOGIN -->
+        <div
+            class="box"
+            id="loginBox"
+            style="display:none;"
+        >
+
+            <h2>Welcome Back</h2>
+
+            <input
+                type="email"
+                id="loginEmail"
+                placeholder="Enter email"
+            >
+
+            <input
+                type="password"
+                id="loginPassword"
+                placeholder="Enter password"
+            >
+
+            <button onclick="loginUser()">
+                Login
+            </button>
+
+            <p>
+                Don't have an account?
+
+                <a href="#" onclick="showRegister()">
+                    Register
+                </a>
+            </p>
+
+        </div>
+
+        <!-- TASK SECTION -->
+        <div
+            id="taskSection"
+            style="display:none;"
+        >
+
+            <div class="box">
+
+                <div class="top-bar">
+
+                    <h2>My Tasks</h2>
+
+                    
+
+                </div>
+
+                <div class="task-input">
+
+                    <input
+                        type="text"
+                        id="taskTitle"
+                        placeholder="Enter task"
+                    >
+
+                    <button onclick="createTask()">
+                        Add
+                    </button>
+
+                </div>
+
+            </div>
+
+            <div class="box">
+
+                <ul id="taskList"></ul>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>
