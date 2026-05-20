@@ -1,4 +1,4 @@
-const API_URL = "https://simple-task-manager-7h4z.onrender.com/"
+const API_URL = "https://simple-task-manager-7h4z.onrender.com"
 
 
 // SHOW LOGIN
@@ -113,6 +113,10 @@ async function loginUser() {
     alert("Login successful")
 
     document.getElementById(
+        "registerBox"
+    ).style.display = "none"
+
+    document.getElementById(
         "loginBox"
     ).style.display = "none"
 
@@ -143,7 +147,7 @@ async function createTask() {
     )
 
     const response = await fetch(
-        `${API_URL}/tasks?title=${title}`,
+        `${API_URL}/tasks?title=${encodeURIComponent(title)}`,
         {
             method: "POST",
 
@@ -233,7 +237,7 @@ async function getTasks() {
 }
 
 
-// COMPLETE TASK
+// COMPLETE / UNCOMPLETE TASK
 async function completeTask(taskId) {
 
     const token = localStorage.getItem(
@@ -280,21 +284,6 @@ async function deleteTask(taskId) {
     )
 
     getTasks()
-}
-
-
-// LOGOUT
-function logoutUser() {
-
-    localStorage.removeItem("token")
-
-    document.getElementById(
-        "taskSection"
-    ).style.display = "none"
-
-    document.getElementById(
-        "loginBox"
-    ).style.display = "block"
 }
 
 
