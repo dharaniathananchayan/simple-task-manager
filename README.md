@@ -188,3 +188,10 @@ Install with:
 pip install -r requirements.txt
 ```
 
+## Live Demo
+
+Frontend:
+https://your-vercel-url.vercel.app
+
+Backend API Docs:
+https://simple-task-manager-7h4z.onrender.com/docs
