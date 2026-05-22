@@ -9,6 +9,10 @@ function showLogin() {
     ).style.display = "none"
 
     document.getElementById(
+        "taskSection"
+    ).style.display = "none"
+
+    document.getElementById(
         "loginBox"
     ).style.display = "block"
 }
@@ -19,6 +23,10 @@ function showRegister() {
 
     document.getElementById(
         "loginBox"
+    ).style.display = "none"
+
+    document.getElementById(
+        "taskSection"
     ).style.display = "none"
 
     document.getElementById(
@@ -56,12 +64,16 @@ async function registerUser() {
 
     const data = await response.json()
 
-    alert(data.message || data.detail)
+    if (!response.ok) {
 
-    if (response.ok) {
+        alert(data.detail || data.message)
 
-        showLogin()
+        return
     }
+
+    alert("User registered successfully")
+
+    showLogin()
 }
 
 
@@ -110,7 +122,7 @@ async function loginUser() {
         data.access_token
     )
 
-    alert("Login successful")
+    alert("Logged in successfully")
 
     document.getElementById(
         "registerBox"
@@ -125,6 +137,23 @@ async function loginUser() {
     ).style.display = "block"
 
     getTasks()
+}
+
+
+// LOGOUT USER
+function logoutUser() {
+
+    localStorage.removeItem("token")
+
+    document.getElementById(
+        "taskSection"
+    ).style.display = "none"
+
+    document.getElementById(
+        "loginBox"
+    ).style.display = "block"
+
+    alert("Logged out successfully")
 }
 
 
